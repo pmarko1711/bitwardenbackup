@@ -14,11 +14,11 @@ docker run --rm -e BW_USER=bitwardenemail -e BW_PASS=bitwardenpassword -e RAW=1 
 ```
 docker run --rm -it -e BW_USER=bitwardenemail -e BW_PASS=bitwardenpassword -e OUTFILE=bw.bck -v /path/to/folder/:/output petibear/bitwardenbackup
 ```
-* Encryption is performed using gpg2 with symmetric cypher with `BW_PASS` used as passphrase unless `GPG_PASS` is set on which case the latter is used.
+* Encryption is performed using gpg2 with a symmetric cypher with `BW_PASS` used as the passphrase unless `GPG_PASS` is set (in which case the latter is used).
     * decrypt e.g. using `gpg2 -d filename` (or `echo "password" | gpg --batch --passphrase-fd 0 -d /file/to/backup`)
 * WSL2 - use `-v c:/path/to/folder/:/output` volume format
 
-* RYou might want to delete the volume not to keep the file, especially if contains raw passwords (see `docker volume help`)
+* You might want to delete the volume after not to keep the file, especially if contains raw passwords (see `docker volume help`).
 
 
 
