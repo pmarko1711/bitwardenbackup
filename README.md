@@ -1,4 +1,4 @@
-# petibear/bitwardenbackup
+# pmarko1711/bitwardenbackup
 Simple Docker image to backup bitwarden passwords with.
 
 
@@ -7,12 +7,12 @@ Simple Docker image to backup bitwarden passwords with.
 ### Stdout (raw) output
 
 ```bash
-docker run --rm -e BW_USER=bitwardenemail -e BW_PASS=bitwardenpassword -e RAW=1 petibear/bitwardenbackup
+docker run --rm -e BW_USER=bitwardenemail -e BW_PASS=bitwardenpassword -e RAW=1 pmarko1711/bitwardenbackup
 ```
 
 ### File (encrypted) output
 ```
-docker run --rm -it -e BW_USER=bitwardenemail -e BW_PASS=bitwardenpassword -e OUTFILE=bw.bck -v /path/to/folder/:/output petibear/bitwardenbackup
+docker run --rm -it -e BW_USER=bitwardenemail -e BW_PASS=bitwardenpassword -e OUTFILE=bw.bck -v /path/to/folder/:/output pmarko1711/bitwardenbackup
 ```
 * Encryption is performed using gpg2 with a symmetric cypher with `BW_PASS` used as the passphrase unless `GPG_PASS` is set (in which case the latter is used).
     * decrypt e.g. using `gpg2 -d filename` (or `echo "password" | gpg --batch --passphrase-fd 0 -d /file/to/backup`)
